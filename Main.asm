@@ -69,6 +69,10 @@ entrada_invalida_jogo:
     j loop_principal       # Pergunta novamente
 
 jogar:
+    # Inicializa as pontuações do jogador e dealer
+    li s5, 0               # Pontuação do jogador
+    li s6, 0               # Pontuação do dealer (opcional, mas pode ser útil no futuro)
+
     # Sorteio inicial de cartas para o jogador e dealer
     jal gerar_carta        # Sorteia primeira carta do jogador
     mv s1, a0              # Armazena carta do jogador em s1
